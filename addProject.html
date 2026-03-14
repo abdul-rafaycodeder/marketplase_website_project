@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Card Creator</title>
+    <link rel="stylesheet" href="addProject.css">
+</head>
+
+<body>
+
+    <h1>Create Card</h1>
+
+    <div class="form">
+
+        <input type="text" id="name" placeholder="Enter Name">
+
+        <input type="text" id="title" placeholder="Enter Title">
+
+        <input type="text" id="image" placeholder="Enter Image URL">
+
+        <textarea id="desc" placeholder="Enter Description"></textarea>
+
+        <a href="./login.html"><button onclick="createCard()">Create Card</button></a>
+        
+    </div>
+
+    <hr>
+
+    <div id="cardContainer"></div>
+
+    <script src="addProject.js"></script>
+
+</body>
+
+</html>

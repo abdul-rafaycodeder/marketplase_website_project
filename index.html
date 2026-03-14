@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Card Creator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            MyWebsite
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="./addProject.html">Add Product</a></li>
+            <li><a href="#">All Product</a></li>
+        </ul>
+
+        <div class="nav-btn">
+            <a href="./login.html"><button class="login-btn">Login</button></a>
+        </div>
+
+    </nav>
+
+
+    <!-- PRODUCTS SECTION -->
+
+    <section class="products">
+
+        <h2 class="title">Our Products</h2>
+
+        <div class="product-container">
+
+            <div class="product-card">
+                <img src="https://picsum.photos/300/200?1">
+                <h3>Wireless Headphones</h3>
+                <p class="price">$120</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/300/200?2">
+                <h3>Smart Watch</h3>
+                <p class="price">$90</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/300/200?3">
+                <h3>Gaming Mouse</h3>
+                <p class="price">$45</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/300/200?4">
+                <h3>Bluetooth Speaker</h3>
+                <p class="price">$65</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/300/200?5">
+                <h3>Wireless Keyboard</h3>
+                <p class="price">$55</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/300/200?6">
+                <h3>Smart Phone</h3>
+                <p class="price">$450</p>
+                <button>Add to Cart</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- contact page -->
+
+    <section class="contact-section">
+
+        <h2>Contact Us</h2>
+
+        <div class="contact-container">
+
+            <form id="contactForm">
+
+                <div class="input-box">
+                    <label>Name</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="input-box">
+                    <label>Email</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="input-box">
+                    <label>Message</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+
+                <p id="successMsg"></p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- footer -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-col">
+                <h3>MyWebsite</h3>
+                <p>
+                    We provide high quality products with the best prices.
+                    Shop with confidence and enjoy fast delivery.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Customer Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">Twitter</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 MyWebsite. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>
