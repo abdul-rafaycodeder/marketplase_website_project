@@ -1,33 +1,32 @@
-const togglePassword = document.getElementById("togglePassword");
-const password = document.getElementById("password");
+// Tab Switching
+const signInBtn = document.getElementById("signInBtn");
+const signUpBtn = document.getElementById("signUpBtn");
+const signInForm = document.getElementById("signInForm");
+const signUpForm = document.getElementById("signUpForm");
 
-togglePassword.addEventListener("click", function () {
-
-const type = password.getAttribute("type") === "password" ? "text" : "password";
-password.setAttribute("type", type);
-
-this.classList.toggle("fa-eye-slash");
-
+signInBtn.addEventListener("click", ()=>{
+  signInForm.classList.add("active");
+  signUpForm.classList.remove("active");
+  signInBtn.classList.add("active");
+  signUpBtn.classList.remove("active");
 });
 
-//-----------------------------------------------login------------------------------------------//
+signUpBtn.addEventListener("click", ()=>{
+  signUpForm.classList.add("active");
+  signInForm.classList.remove("active");
+  signUpBtn.classList.add("active");
+  signInBtn.classList.remove("active");
+});
 
- 
-  // // Import the functions you need from the SDKs you need
-  // import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-  // // TODO: Add SDKs for Firebase products that you want to use
-  // // https://firebase.google.com/docs/web/setup#available-libraries
+// Show / Hide Password
+function togglePassword(id){
+  const password = document.getElementById(id);
+  if(password.type === "password"){
+    password.type = "text";
+  }else{
+    password.type = "password";
+  }
+}
 
-  // // Your web app's Firebase configuration
-  // const firebaseConfig = {
-  //   apiKey: "AIzaSyAOoM5Mo0h0bkJHdRRT_DCEVIcqMlY7kzo",
-  //   authDomain: "marketplase-project.firebaseapp.com",
-  //   projectId: "marketplase-project",
-  //   storageBucket: "marketplase-project.firebasestorage.app",
-  //   messagingSenderId: "539266350649",
-  //   appId: "1:539266350649:web:d32217bb184a7b6f00d7e8"
-  // };
-
-  // // Initialize Firebase
-  // const app = initializeApp(firebaseConfig);
- 
+// Default Sign In Active
+signInForm.classList.add("active");
