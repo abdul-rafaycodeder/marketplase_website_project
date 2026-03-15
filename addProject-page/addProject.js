@@ -1,16 +1,16 @@
-function createCard(){
+function createCard() {
 
-let name = document.getElementById("name").value;
-let title = document.getElementById("title").value;
-let image = document.getElementById("image").value;
-let desc = document.getElementById("desc").value;
+    let name = document.getElementById("name").value;
+    let title = document.getElementById("title").value;
+    let image = document.getElementById("image").value;
+    let desc = document.getElementById("desc").value;
 
-if(name === "" || title === "" || image === "" || desc === ""){
-alert("Please fill all fields");
-return;
-}
+    if (name === "" || title === "" || image === "" || desc === "") {
+        alert("Please fill all fields");
+        return;
+    }
 
-let card = `
+    let card = `
 <div class="card">
 
 <img src="${image}">
@@ -28,6 +28,6 @@ let card = `
 </div>
 `;
 
-document.getElementById("cardContainer").innerHTML += card;
+    document.getElementById("cardContainer").innerHTML += card;
 
 }

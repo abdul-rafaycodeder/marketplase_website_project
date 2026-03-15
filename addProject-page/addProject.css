@@ -1,33 +1,41 @@
 * {
-    padding: 0%;
-    margin: 0%;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* navbar */
+body {
+    background: #0f172a;
+    color: #333;
+}
+
+/* NAVBAR */
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 60px;
-    background: #263c6f;
+    padding: 18px 70px;
+    background: #1e293b;
     color: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
     letter-spacing: 1px;
+    color: #38bdf8;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     gap: 35px;
-    margin: 0;
-    padding: 0;
 }
 
 .nav-links a {
@@ -46,7 +54,7 @@
     content: "";
     position: absolute;
     left: 0;
-    bottom: -5px;
+    bottom: -6px;
     width: 0%;
     height: 2px;
     background: #38bdf8;
@@ -57,86 +65,163 @@
     width: 100%;
 }
 
+/* LOGIN BUTTON */
+
 .login-btn {
-    padding: 8px 18px;
+    padding: 10px 22px;
     border: none;
-    background: #38bdf8;
+    background: linear-gradient(45deg, #38bdf8, #0ea5e9);
     color: white;
     font-weight: bold;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .login-btn:hover {
-    background: #0284c7;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 
-/* Create cards */
-body {
-    font-family: Arial;
-    background: #f4f4f4;
-    padding: 40px;
-}
+/* FORM SECTION */
 
 .form {
-    width: 300px;
+    width: 320px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    margin: 40px auto;
 }
 
 input,
 textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #38bdf8;
+    box-shadow: 0 0 5px rgba(56, 189, 248, 0.4);
 }
 
 button {
-    padding: 10px;
+    padding: 12px;
     border: none;
-    background: #007bff;
+    background: linear-gradient(45deg, #2563eb, #1d4ed8);
     color: white;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: 0.3s;
 }
 
 button:hover {
-    background: #0056b3;
+    background: linear-gradient(45deg, #1d4ed8, #1e40af);
+    transform: scale(1.03);
 }
+
+
+/* CARD CONTAINER */
 
 #cardContainer {
-    margin-top: 30px;
+    margin: 40px auto;
+    padding: 20px;
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
 }
 
+/* PRODUCT CARD */
 .card {
-    width: 250px;
     background: white;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: 0.35s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
 }
 
 .card img {
-    width: 100%;
-    height: 150px;
+    width: 300px;
+    height: 200px;
     object-fit: cover;
 }
 
+/* CARD CONTENT */
+
 .card-content {
-    padding: 15px;
+    padding: 18px;
 }
 
 .card-content h3 {
-    margin: 0;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #0f172a;
 }
 
 .card-content p {
     font-size: 14px;
-    color: #555;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* EXTRA BUTTON STYLE INSIDE CARD */
+
+.card-content button {
+    margin-top: 10px;
+    width: 100%;
+    background: #38bdf8;
+}
+
+.card-content button:hover {
+    background: #0284c7;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px) {
+
+    .navbar {
+        padding: 15px 30px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+}
+
+@media(max-width:600px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .form {
+        width: 90%;
+    }
+
 }

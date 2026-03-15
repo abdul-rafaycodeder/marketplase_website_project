@@ -4,9 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Sign In / Sign Up</title>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-
   <link rel="stylesheet" href="login.css">
 </head>
 
@@ -42,12 +40,16 @@
 
       <!-- SIGN UP -->
       <div id="signUpForm" class="form">
+
         <input type="text" id="signupName" placeholder="Full Name" required>
         <input type="email" id="signupEmail" placeholder="Email Address" required>
         <div class="password-box">
-          <input type="password" id="signupPassword" placeholder="Password" required>
+
+          <input type="password" id="signupPassword" placeholder="Password" required
+          >
           <span class="toggle" onclick="togglePassword('signupPassword')">
             <i class="fa-solid fa-eye"></i>
+            
           </span>
         </div>
         <button id="registerBtn">Sign Up</button>
