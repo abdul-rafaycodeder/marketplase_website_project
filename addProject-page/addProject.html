@@ -6,35 +6,6 @@
     <title>Dynamic Card Creator</title>
     <link rel="stylesheet" href="addProject.css">
 </head>
-<div id="editPopup" class="popup">
-
-    <div class="popup-box">
-
-        <h2>Edit Card</h2>
-
-        <input id="editName" placeholder="Name">
-        <input id="editTitle" placeholder="Title">
-        <input id="editImage" placeholder="Image URL">
-        <textarea id="editDesc"></textarea>
-
-        <button onclick="updateCard()">Update</button>
-        <button onclick="closePopup()">Cancel</button>
-
-    </div>
-
-</div>
-
-<button onclick="showImage()">Image Card</button>
-<button onclick="showVideo()">Video Card</button>
-
-<div id="imageForm">
-    <!-- image form -->
-</div>
-
-<div id="videoForm" style="display:none">
-    <input id="videoUrl" placeholder="Video URL">
-</div>
-
 <body>
 
     <!-- navbar -->
@@ -61,30 +32,52 @@
 
     <!-- create card -->
 
-    <h1>Create Card</h1>
+    <div id="editPopup" class="popup">
 
-    <div class="form">
+    <div class="popup-box">
 
-        <input type="text" id="name" placeholder="Enter Name">
+        <h2>Edit Card</h2>
 
-        <input type="text" id="title" placeholder="Enter Title">
+        <input id="editName" placeholder="Name">
+        <input id="editTitle" placeholder="Title">
+        <input id="editImage" placeholder="Image URL">
+        <textarea id="editDesc"></textarea>
 
-        <input type="text" id="image" placeholder="Enter Image URL">
-
-        <textarea id="desc" placeholder="Enter Description"></textarea>
-
-        <a href="#"><button onclick="createCard()">Create Card</button></a>
+        <button onclick="updateCard()">Update</button>
+        <button onclick="closePopup()">Cancel</button>
 
     </div>
 
-    <hr>
+    </div>
 
+    <button onclick="showImage()">Image Card</button>
+    <button onclick="showVideo()">Video Card</button>
+
+    <div id="imageForm">
+        <!-- image form -->
+    </div>
+
+    <div id="videoForm" style="display:none">
+        <input id="videoUrl" placeholder="Video URL">
+    </div>
+
+
+
+    <h1>Create Card</h1>
+    <div class="form">
+        <input type="text" id="name" placeholder="Enter Name">
+        <input type="text" id="title" placeholder="Enter Title">
+        <input type="text" id="image" placeholder="Enter Image URL">
+        <textarea id="desc" placeholder="Enter Description"></textarea>
+        <a href="#"><button onclick="createCard()">Create Card</button></a>
+    </div>
+    <hr>
     <div id="cardContainer"></div>
 
 
-    <script type="module " src="addProject-database.js"></script>
-    <script src="addProject.js"></script>
+    <script src="addProject.js" type="module"></script>
+    <!-- <script type="module " src="addProject-database.js"></script> -->
 
-</body>
+    </body>
 
 </html>
