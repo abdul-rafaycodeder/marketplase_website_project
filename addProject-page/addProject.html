@@ -6,12 +6,40 @@
     <title>Dynamic Card Creator</title>
     <link rel="stylesheet" href="addProject.css">
 </head>
+<div id="editPopup" class="popup">
+
+    <div class="popup-box">
+
+        <h2>Edit Card</h2>
+
+        <input id="editName" placeholder="Name">
+        <input id="editTitle" placeholder="Title">
+        <input id="editImage" placeholder="Image URL">
+        <textarea id="editDesc"></textarea>
+
+        <button onclick="updateCard()">Update</button>
+        <button onclick="closePopup()">Cancel</button>
+
+    </div>
+
+</div>
+
+<button onclick="showImage()">Image Card</button>
+<button onclick="showVideo()">Video Card</button>
+
+<div id="imageForm">
+    <!-- image form -->
+</div>
+
+<div id="videoForm" style="display:none">
+    <input id="videoUrl" placeholder="Video URL">
+</div>
 
 <body>
 
     <!-- navbar -->
 
-     <nav class="navbar">
+    <nav class="navbar">
 
         <div class="logo">
             MyWebsite
@@ -22,6 +50,7 @@
             <li><a href="#">About</a></li>
             <li><a href="./addProject.html">Add Product</a></li>
             <li><a href="#">All Product</a></li>
+            <li><a href="./library.html">Library</a></li>
         </ul>
 
         <div class="nav-btn">
@@ -45,7 +74,7 @@
         <textarea id="desc" placeholder="Enter Description"></textarea>
 
         <a href="#"><button onclick="createCard()">Create Card</button></a>
-        
+
     </div>
 
     <hr>
@@ -53,7 +82,7 @@
     <div id="cardContainer"></div>
 
 
-    <script type="module" src="addProject-database.js"></script>
+    <script type="module " src="addProject-database.js"></script>
     <script src="addProject.js"></script>
 
 </body>

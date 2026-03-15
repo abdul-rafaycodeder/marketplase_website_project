@@ -31,3 +31,4 @@ function createCard() {
     document.getElementById("cardContainer").innerHTML += card;
 
 }
+
