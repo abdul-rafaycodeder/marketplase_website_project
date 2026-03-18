@@ -27,9 +27,17 @@ body {
 
 .logo {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 900;
     letter-spacing: 1px;
     color: #38bdf8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin-top: 40px;
+    color: white;
+    font-size: 40px;
 }
 
 .nav-links {
