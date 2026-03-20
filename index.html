@@ -3,201 +3,337 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Dynamic Card Creator</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopFlow | Modern E-Commerce Experience</title>
+
+    <!-- Font Awesome 6 (Latest) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Navbar -->
     <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-store-alt"></i>
+                <span>ShopFlow</span>
+            </div>
 
-        <div class="logo">
-            MyWebsite
+            <ul class="nav-links">
+                <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#products"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+
+                <a href="./login.html" class="login-btn">
+                    <i class="fas fa-user"></i>
+                    <span>Sign In</span>
+                </a>
+
+                <button class="mobile-menu" id="mobileMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
-
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="./addProject.html">Add Product</a></li>
-            <li><a href="#">All Product</a></li>
-        </ul>
-
-        <div class="nav-btn">
-            <a href="./login.html"><button class="login-btn">Login</button></a>
-        </div>
-
     </nav>
 
-
-    <!-- PRODUCTS SECTION -->
-
-    <section class="products">
-
-        <h2 class="title">Our Products</h2>
-
-        <div class="product-container">
-
-            <div class="product-card">
-                <img src="https://picsum.photos/300/200?1">
-                    <h3>Wireless Headphones</h3>
-                    <p class="price">$120</p>
-                <button>Add to Cart </button>
-                <i class="fa-solid fa-heart" id="icon"></i>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content" data-aos="fade-up">
+            <span class="hero-badge">Welcome to ShopFlow</span>
+            <h1>Discover Amazing <span class="gradient-text">Products</span> at Best Prices</h1>
+            <p>Shop the latest trends with confidence. Fast delivery, secure payments, and 24/7 customer support.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn btn-primary">
+                    <i class="fas fa-shopping-bag"></i>
+                    Shop Now
+                </a>
+                <a href="#about" class="btn btn-outline">
+                    <i class="fas fa-play"></i>
+                    Learn More
+                </a>
             </div>
-
-            <div class="product-card">
-                <img src="https://picsum.photos/300/200?2">
-                <h3>Smart Watch</h3>
-                <p class="price">$90</p>
-                <button>Add to Cart</button>
-                <i class="fa-solid fa-heart" id="icon"></i>
-            </div>
-
-            <div class="product-card">
-                <img src="https://picsum.photos/300/200?3">
-                <h3>Gaming Mouse</h3>
-                <p class="price">$45</p>
-                <button>Add to Cart</button>
-                <i class="fa-solid fa-heart" id="icon"></i>
-            </div>
-
-            <div class="product-card">
-                <img src="https://picsum.photos/300/200?4">
-                <h3>Bluetooth Speaker</h3>
-                <p class="price">$65</p>
-                <button>Add to Cart</button>
-                <i class="fa-solid fa-heart" id="icon"></i>
-            </div>
-
-            <div class="product-card">
-                <img src="https://picsum.photos/300/200?5">
-                <h3>Wireless Keyboard</h3>
-                <p class="price">$55</p>
-                <button>Add to Cart</button>
-                <i class="fa-solid fa-heart" id="icon"></i>
-            </div>
-
-            <div class="product-card">
-                <img src="https://picsum.photos/300/200?6">
-                <h3>Smart Phone</h3>
-                <p class="price">$450</p>
-                <button>Add to Cart</button>
-                <i class="fa-solid fa-heart" id="icon"></i>
-            </div>
-
-            <div class="product-card">
-                <img src="https://picsum.photos/300/200?6">
-                <h3>Smart Phone</h3>
-                <p class="price">$450</p>
-                <button>Add to Cart</button>
-                <i class="fa-solid fa-heart" id="icon"></i>
-            </div>
-
-            <div class="product-card">
-                <img src="https://picsum.photos/300/200?6">
-                <h3>Smart Phone</h3>
-                <p class="price">$450</p>
-                <button>Add to Cart</button>
-                <i class="fa-solid fa-heart" id="icon"></i>
-            </div>
-
         </div>
-
+        <div class="hero-image" data-aos="fade-left">
+            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                alt="Shopping">
+            <div class="floating-card card-1">
+                <i class="fas fa-truck"></i>
+                <span>Free Shipping</span>
+            </div>
+            <div class="floating-card card-2">
+                <i class="fas fa-shield-alt"></i>
+                <span>Secure Payment</span>
+            </div>
+        </div>
     </section>
 
-    <!-- contact page -->
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <div class="feature-card" data-aos="fade-up">
+                <div class="feature-icon">
+                    <i class="fas fa-truck-fast"></i>
+                </div>
+                <h3>Free Delivery</h3>
+                <p>Free shipping on all orders above $50</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">
+                    <i class="fas fa-rotate-left"></i>
+                </div>
+                <h3>Easy Returns</h3>
+                <p>30-day money-back guarantee</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3>Secure Payment</h3>
+                <p>100% secure transactions</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>24/7 Support</h3>
+                <p>Dedicated customer service</p>
+            </div>
+        </div>
+    </section>
 
-    <section class="contact-section">
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-subtitle">Our Collection</span>
+            <h2 class="section-title">Featured <span class="gradient-text">Products</span></h2>
+            <p>Discover our hand-picked selection of premium products</p>
+        </div>
 
-        <h2>Contact Us</h2>
+        <div class="product-container" id="productContainer">
+            <!-- Products will be dynamically loaded here -->
+        </div>
+
+        <div class="section-footer" data-aos="fade-up">
+            <button class="btn btn-outline" id="loadMoreBtn">
+                <i class="fas fa-redo-alt"></i>
+                Load More Products
+            </button>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="newsletter-container" data-aos="zoom-in">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest updates on new products and upcoming sales</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-subtitle">Get In Touch</span>
+            <h2 class="section-title">Contact <span class="gradient-text">Us</span></h2>
+            <p>Have questions? We'd love to hear from you</p>
+        </div>
 
         <div class="contact-container">
-
-            <form id="contactForm">
-
-                <div class="input-box">
-                    <label>Name</label>
-                    <input type="text" id="name" required>
+            <div class="contact-info" data-aos="fade-right">
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Visit Us</h3>
+                        <p>123 Business Avenue, New York, NY 10001</p>
+                    </div>
                 </div>
-
-                <div class="input-box">
-                    <label>Email</label>
-                    <input type="email" id="email" required>
+                <div class="info-card">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Call Us</h3>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
                 </div>
-
-                <div class="input-box">
-                    <label>Message</label>
-                    <textarea id="message" rows="5" required></textarea>
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email Us</h3>
+                        <p>support@shopflow.com</p>
+                    </div>
                 </div>
+            </div>
 
-                <button type="submit">Send Message</button>
+            <div class="contact-form" data-aos="fade-left">
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="contactName">
+                                <i class="fas fa-user"></i>
+                                Full Name
+                            </label>
+                            <input type="text" id="contactName" placeholder="John Doe" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="contactEmail">
+                                <i class="fas fa-envelope"></i>
+                                Email Address
+                            </label>
+                            <input type="email" id="contactEmail" placeholder="john@example.com" required>
+                        </div>
+                    </div>
 
-                <p id="successMsg"></p>
+                    <div class="input-group">
+                        <label for="contactSubject">
+                            <i class="fas fa-tag"></i>
+                            Subject
+                        </label>
+                        <input type="text" id="contactSubject" placeholder="How can we help?" required>
+                    </div>
 
-            </form>
+                    <div class="input-group">
+                        <label for="contactMessage">
+                            <i class="fas fa-comment"></i>
+                            Message
+                        </label>
+                        <textarea id="contactMessage" rows="5" placeholder="Write your message here..."
+                            required></textarea>
+                    </div>
 
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
         </div>
-
     </section>
 
-    <!-- footer -->
-
+    <!-- Footer -->
     <footer class="footer">
-
         <div class="footer-container">
-
             <div class="footer-col">
-                <h3>MyWebsite</h3>
-                <p>
-                    We provide high quality products with the best prices.
-                    Shop with confidence and enjoy fast delivery.
-                </p>
+                <div class="footer-logo">
+                    <i class="fas fa-store-alt"></i>
+                    <span>ShopFlow</span>
+                </div>
+                <p>Your one-stop destination for quality products at unbeatable prices.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
 
             <div class="footer-col">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#products"><i class="fas fa-chevron-right"></i> Products</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h3>Customer Support</h3>
+                <h3>Customer Service</h3>
                 <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Return Policy</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Help Center</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Returns Policy</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h3>Follow Us</h3>
-
-                <div class="social-links">
-                    <a href="#">Facebook</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">YouTube</a>
-                    <a href="#">Twitter</a>
+                <h3>Download App</h3>
+                <p>Get exclusive offers on our mobile app</p>
+                <div class="app-buttons">
+                    <a href="#" class="app-btn">
+                        <i class="fab fa-apple"></i>
+                        <span>App Store</span>
+                    </a>
+                    <a href="#" class="app-btn">
+                        <i class="fab fa-google-play"></i>
+                        <span>Google Play</span>
+                    </a>
                 </div>
-
             </div>
-
         </div>
 
         <div class="footer-bottom">
-            <p>© 2026 MyWebsite. All Rights Reserved.</p>
+            <p>&copy; 2026 ShopFlow. All rights reserved. | Made with <i class="fas fa-heart"
+                    style="color: #ef4444;"></i> for amazing customers</p>
         </div>
-
     </footer>
 
-    <script src="login.js"></script>
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically inserted -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount" id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn-primary checkout-btn">
+                <i class="fas fa-lock"></i>
+                Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Product added to cart!</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
