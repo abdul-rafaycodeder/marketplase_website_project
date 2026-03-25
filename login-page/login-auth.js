@@ -42,11 +42,11 @@ githubProvider.addScope('user:email');
 onAuthStateChanged(auth, async (user) => {
     if (user) {
         console.log("User Logged In:", user.email);
-        
+
         // Check if user exists in database, if not, create record
         const userRef = ref(database, "users/" + user.uid);
         const snapshot = await get(userRef);
-        
+
         if (!snapshot.exists()) {
             // New user from social login, save to database
             await set(userRef, {
@@ -61,7 +61,7 @@ onAuthStateChanged(auth, async (user) => {
             // Update last login
             await set(ref(database, "users/" + user.uid + "/lastLogin"), Date.now());
         }
-        
+
         // You can redirect to dashboard here if needed
         // window.location.href = "dashboard.html";
     } else {
@@ -77,7 +77,7 @@ if (registerBtn) {
 
 async function signUp() {
     showLoading('registerBtn', true);
-    
+
     const name = document.getElementById('signupName').value.trim();
     const email = document.getElementById('signupEmail').value.trim();
     const password = document.getElementById('signupPassword').value;
@@ -94,6 +94,8 @@ async function signUp() {
         showLoading('registerBtn', false);
         return;
     }
+
+
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
@@ -112,6 +114,11 @@ async function signUp() {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
+
+        if (user) {
+            location.href = "../addProject-page/addProject.html"
+        }
+
         await set(ref(database, "users/" + user.uid), {
             name: name,
             email: email,
@@ -121,19 +128,19 @@ async function signUp() {
         });
 
         showToast('Account created successfully!', 'success');
-        
+
         document.getElementById('signupName').value = '';
         document.getElementById('signupEmail').value = '';
         document.getElementById('signupPassword').value = '';
         if (termsAgree) document.getElementById('termsAgree').checked = false;
-        
+
         setTimeout(() => {
             switchToSignInForm();
         }, 2000);
 
     } catch (error) {
         console.error('Signup error:', error);
-        
+
         switch (error.code) {
             case 'auth/email-already-in-use':
                 showToast('Email is already registered', 'error');
@@ -160,7 +167,7 @@ if (loginBtn) {
 
 async function signIn() {
     showLoading('loginBtn', true);
-    
+
     const email = document.getElementById('signinEmail').value.trim();
     const password = document.getElementById('signinPassword').value;
     const rememberMe = document.getElementById('rememberMe')?.checked;
@@ -182,20 +189,24 @@ async function signIn() {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
+        if (user) {
+            location.href = "../addProject-page/addProject.html"
+        }
+
         await set(ref(database, "users/" + user.uid + "/lastLogin"), Date.now());
 
         showToast('Login successful! Redirecting...', 'success');
-        
+
         document.getElementById('signinEmail').value = '';
         document.getElementById('signinPassword').value = '';
-        
+
         setTimeout(() => {
             window.location.href = "index.html";
         }, 1500);
 
     } catch (error) {
         console.error('Login error:', error);
-        
+
         switch (error.code) {
             case 'auth/invalid-credential':
             case 'auth/user-not-found':
@@ -222,23 +233,23 @@ async function signIn() {
 // GOOGLE SIGN-IN FUNCTION
 async function signInWithGoogle() {
     showToast('Connecting to Google...', 'info');
-    
+
     try {
         const result = await signInWithPopup(auth, googleProvider);
         const user = result.user;
-        
+
         // The signed-in user info
         console.log('Google sign-in successful:', user);
-        
+
         showToast('Google sign-in successful! Redirecting...', 'success');
-        
+
         setTimeout(() => {
             window.location.href = "index.html";
         }, 1500);
-        
+
     } catch (error) {
         console.error('Google sign-in error:', error);
-        
+
         // Handle errors
         switch (error.code) {
             case 'auth/popup-closed-by-user':
@@ -262,23 +273,23 @@ async function signInWithGoogle() {
 // GITHUB SIGN-IN FUNCTION
 async function signInWithGithub() {
     showToast('Connecting to GitHub...', 'info');
-    
+
     try {
         const result = await signInWithPopup(auth, githubProvider);
         const user = result.user;
-        
+
         // The signed-in user info
         console.log('GitHub sign-in successful:', user);
-        
+
         showToast('GitHub sign-in successful! Redirecting...', 'success');
-        
+
         setTimeout(() => {
             window.location.href = "index.html";
         }, 1500);
-        
+
     } catch (error) {
         console.error('GitHub sign-in error:', error);
-        
+
         // Handle errors
         switch (error.code) {
             case 'auth/popup-closed-by-user':
@@ -305,13 +316,13 @@ async function resetPassword(email) {
         showToast('Please enter your email address', 'error');
         return;
     }
-    
+
     try {
         await sendPasswordResetEmail(auth, email);
         showToast('Password reset email sent! Check your inbox', 'success');
     } catch (error) {
         console.error('Password reset error:', error);
-        
+
         switch (error.code) {
             case 'auth/user-not-found':
                 showToast('No account found with this email', 'error');
