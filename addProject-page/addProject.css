@@ -444,6 +444,74 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Login overlay styles */
+.login-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+}
+
+.login-message {
+    text-align: center;
+    padding: 2rem;
+}
+
+.login-message i {
+    font-size: 3rem;
+    color: #3b82f6;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.login-message p {
+    font-size: 1rem;
+    color: #334155;
+}
+
+.login-message a {
+    color: #3b82f6;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-message a:hover {
+    text-decoration: underline;
+}
+
+/* Dark theme support */
+body.dark-theme .login-overlay {
+    background: rgba(30, 41, 59, 0.95);
+}
+
+body.dark-theme .login-message p {
+    color: #cbd5e1;
+}
+
+/* Empty state for login required */
+.empty-state i.fa-lock {
+    font-size: 4rem;
+    color: #3b82f6;
+    margin-bottom: 1rem;
+}
+
+.empty-state a {
+    color: #3b82f6;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.empty-state a:hover {
+    text-decoration: underline;
+}
 .card-footer {
     display: flex;
     justify-content: space-between;
