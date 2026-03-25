@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Professional Contact | Connect with us</title>
+    <!-- Google Fonts: clean, modern typography -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fc 0%, #eef2f9 100%);
+            color: #1a2c3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* modern container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* header / nav placeholder (minimal but elegant) */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(120deg, #1e3c72, #2a5298);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c3e66;
+            transition: color 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #2a5f9e;
+        }
+
+        /* main contact grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        /* left info panel */
+        .info-panel {
+            background: linear-gradient(145deg, #0f2b3d, #0a1f2e);
+            padding: 2.5rem 2rem;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .info-panel h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .info-panel .tagline {
+            font-size: 1rem;
+            line-height: 1.5;
+            opacity: 0.85;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .contact-details {
+            margin: 2rem 0 2.5rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            width: 2.2rem;
+            height: 2.2rem;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #9bc0e6;
+        }
+
+        .contact-item div strong {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-item div p,
+        .contact-item div a {
+            font-weight: 500;
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .contact-item div a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            background: rgba(255, 255, 255, 0.1);
+            width: 38px;
+            height: 38px;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.2s ease;
+        }
+
+        .social-links a:hover {
+            background: #2a6f9c;
+            transform: translateY(-3px);
+        }
+
+        /* right form panel */
+        .form-panel {
+            padding: 2.5rem 2rem;
+            background: white;
+        }
+
+        .form-panel h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #0f2b3d;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-panel p {
+            color: #5b6e8c;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.4rem;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 500;
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+            color: #2c3e66;
+        }
+
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            background: #fefefe;
+            transition: all 0.2s;
+            outline: none;
+            color: #1f2f47;
+        }
+
+        .input-group input:focus,
+        .input-group textarea:focus,
+        .input-group select:focus {
+            border-color: #2a6f9c;
+            box-shadow: 0 0 0 3px rgba(42, 111, 156, 0.15);
+        }
+
+        .row-2cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn-submit {
+            background: #0f2b3d;
+            color: white;
+            border: none;
+            padding: 1rem 1.6rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 2rem;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-top: 0.5rem;
+        }
+
+        .btn-submit i {
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .btn-submit:hover {
+            background: #1e4a6e;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -8px rgba(15, 43, 61, 0.3);
+        }
+
+        .btn-submit:hover i {
+            transform: translateX(4px);
+        }
+
+        /* toast / form feedback */
+        .form-feedback {
+            margin-top: 1.2rem;
+            padding: 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-align: center;
+            display: none;
+        }
+
+        .form-feedback.success {
+            background: #e0f2e9;
+            color: #1e6f3f;
+            display: block;
+            border-left: 4px solid #2c9b5e;
+        }
+
+        .form-feedback.error {
+            background: #fee9e6;
+            color: #bc4e2c;
+            display: block;
+            border-left: 4px solid #e26d4a;
+        }
+
+        /* responsive design */
+        @media (max-width: 880px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                border-radius: 1.5rem;
+            }
+
+            .info-panel {
+                order: 2;
+            }
+
+            .form-panel {
+                order: 1;
+            }
+
+            .container {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .row-2cols {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .info-panel h2 {
+                font-size: 1.7rem;
+            }
+
+            .form-panel h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* map / extra style */
+        .map-placeholder {
+            margin-top: 3rem;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            background: #eef2f9;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .map-frame {
+            background: #dce3ec;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #2c5a7a;
+            gap: 8px;
+        }
+
+        .map-frame i {
+            font-size: 1.4rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #5e6f8d;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding-top: 2rem;
+        }
+
+        a,
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- simple professional header -->
+        <div class="top-bar">
+            <div class="logo">
+                <i class="fas fa-briefcase" style="margin-right: 8px; color: #2a6f9c;"></i> ElevateCorp
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../about-page/index.html">About</a>
+                <a href="../addProject-page/addProject.html" class="active">Product</a>
+                <li><a href="../contact-page/index.html"><i class="fas fa-envelope"></i> Contact</a></li>
+
+            </div>
+        </div>
+
+        <!-- main contact section -->
+        <div class="contact-grid">
+            <!-- LEFT: professional info & contact details -->
+            <div class="info-panel">
+                <div>
+                    <h2>Let’s talk<br>business</h2>
+                    <p class="tagline">Have a project in mind or just want to say hello? Our team is ready to assist you
+                        — professional, fast, and reliable.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Office HQ</strong>
+                                <p>412 Innovation Avenue,<br>San Francisco, CA 94105</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <strong>Direct line</strong>
+                                <p><a href="tel:+1 (415) 555-0198">+1 (415) 555-0198</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email us</strong>
+                                <p><a href="mailto:contact@elevatecorp.com">contact@elevatecorp.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Support hours</strong>
+                                <p>Mon–Fri: 9:00 AM – 6:00 PM (PST)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; font-size: 0.75rem; opacity: 0.6;">
+                    <i class="fas fa-shield-alt"></i> Your data is secure & encrypted
+                </div>
+            </div>
+
+            <!-- RIGHT: professional contact form -->
+            <div class="form-panel">
+                <h3>Send a message</h3>
+                <p>Fill out the form below and we’ll get back to you within 24 hours.</p>
+
+                <form id="professionalContactForm" action="#" method="POST">
+                    <div class="row-2cols">
+                        <div class="input-group">
+                            <label for="fullname">Full name *</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Alex Johnson" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email address *</label>
+                            <input type="email" id="email" name="email" placeholder="alex@company.com" required>
+                        </div>
+                    </div>
+
+                    <div class="row-2cols">
+                        <div class="input-group">
+                            <label for="phone">Phone number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-9999">
+                        </div>
+                        <div class="input-group">
+                            <label for="department">Department</label>
+                            <select id="department" name="department">
+                                <option value="general">General inquiry</option>
+                                <option value="sales">Sales & partnerships</option>
+                                <option value="support">Technical support</option>
+                                <option value="careers">Careers / HR</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject"
+                            placeholder="Project collaboration, support request, etc." required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5"
+                            placeholder="Tell us more about your needs or questions..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <span>Send message</span> <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <div id="formFeedback" class="form-feedback"></div>
+                </form>
+                <p style="font-size: 0.7rem; margin-top: 1.2rem; color: #7c8aa5;">
+                    <i class="fas fa-lock"></i> We respect your privacy. No spam, ever.
+                </p>
+            </div>
+        </div>
+
+        <!-- optional: elegant map placeholder (static professional look) -->
+        <div class="map-placeholder">
+            <div class="map-frame">
+                <i class="fas fa-map-pin"></i> 412 Innovation Ave, San Francisco — <span style="font-weight:500;">Global
+                    Innovation Hub</span>
+                <i class="fas fa-location-dot" style="margin-left: 8px;"></i>
+            </div>
+        </div>
+
+        <footer>
+            © 2025 ElevateCorp — Built for excellence. All trademarks and brands are property of their respective
+            owners.
+        </footer>
+    </div>
+
+    <script>
+        (function () {
+            const form = document.getElementById('professionalContactForm');
+            const feedbackDiv = document.getElementById('formFeedback');
+
+            // Helper to show feedback
+            function showFeedback(message, type) {
+                feedbackDiv.textContent = message;
+                feedbackDiv.className = `form-feedback ${type}`;
+                // auto hide after 5 sec but keep visible for user experience
+                setTimeout(() => {
+                    if (feedbackDiv.className.includes(type)) {
+                        feedbackDiv.style.opacity = '1';
+                        // optionally fade out but better keep until next submit
+                    }
+                }, 100);
+                // scroll feedback into view softly
+                feedbackDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            // clear feedback on new typing? optional but we reset on new submit attempt
+            function resetFeedback() {
+                feedbackDiv.className = 'form-feedback';
+                feedbackDiv.textContent = '';
+                feedbackDiv.style.display = 'none';
+                // restore display to none after class removal
+                setTimeout(() => {
+                    if (!feedbackDiv.className.includes('success') && !feedbackDiv.className.includes('error')) {
+                        feedbackDiv.style.display = 'none';
+                    } else {
+                        feedbackDiv.style.display = 'block';
+                    }
+                }, 10);
+            }
+
+            // simple email validator (additional)
+            function isValidEmail(email) {
+                const re = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+                return re.test(email.trim());
+            }
+
+            // handle form submit with professional demo simulation (no actual backend, but perfect UI)
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                resetFeedback();
+
+                // get fields
+                const fullname = document.getElementById('fullname').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const subject = document.getElementById('subject').value.trim();
+                const message = document.getElementById('message').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const department = document.getElementById('department').value;
+
+                // validation
+                if (!fullname) {
+                    showFeedback('❌ Please enter your full name.', 'error');
+                    document.getElementById('fullname').focus();
+                    return;
+                }
+                if (!email) {
+                    showFeedback('❌ Email address is required.', 'error');
+                    document.getElementById('email').focus();
+                    return;
+                }
+                if (!isValidEmail(email)) {
+                    showFeedback('❌ Please provide a valid email (e.g., name@domain.com).', 'error');
+                    document.getElementById('email').focus();
+                    return;
+                }
+                if (!subject) {
+                    showFeedback('❌ Subject line is missing. Let us know what this is about.', 'error');
+                    document.getElementById('subject').focus();
+                    return;
+                }
+                if (!message) {
+                    showFeedback('❌ Message cannot be empty. Please write your inquiry.', 'error');
+                    document.getElementById('message').focus();
+                    return;
+                }
+                if (message.length < 10) {
+                    showFeedback('📝 Please provide at least 10 characters for a detailed message.', 'error');
+                    document.getElementById('message').focus();
+                    return;
+                }
+
+                // simulate server request with delay & show success
+                const submitBtn = form.querySelector('.btn-submit');
+                const originalBtnText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Sending...';
+                submitBtn.disabled = true;
+
+                try {
+                    // Simulate API / network delay (professional mock)
+                    await new Promise(resolve => setTimeout(resolve, 1200));
+
+                    // mock success — log to console for dev
+                    console.log({
+                        fullname,
+                        email,
+                        phone,
+                        department,
+                        subject,
+                        message,
+                        timestamp: new Date().toISOString()
+                    });
+
+                    // Show success message
+                    showFeedback('✓ Message sent successfully! Our team will contact you shortly.', 'success');
+                    // Optionally reset form fields but keep data? Better reset but keep professional feel
+                    form.reset();
+                    // reset any additional selects to default
+                    document.getElementById('department').selectedIndex = 0;
+                    // small optional: clear feedback after 6 seconds
+                    setTimeout(() => {
+                        if (feedbackDiv.className.includes('success')) {
+                            feedbackDiv.style.opacity = '0';
+                            setTimeout(() => {
+                                if (feedbackDiv.className.includes('success')) {
+                                    resetFeedback();
+                                    feedbackDiv.style.opacity = '';
+                                }
+                            }, 400);
+                        }
+                    }, 5000);
+                } catch (err) {
+                    showFeedback('⚠️ Network error. Please try again later.', 'error');
+                } finally {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+            });
+
+            // live style adjustment: re-enable display block for feedback when class changes
+            const observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                    if (mutation.attributeName === 'class') {
+                        if (feedbackDiv.className.includes('success') || feedbackDiv.className.includes('error')) {
+                            feedbackDiv.style.display = 'block';
+                        } else {
+                            feedbackDiv.style.display = 'none';
+                        }
+                    }
+                });
+            });
+            observer.observe(feedbackDiv, { attributes: true });
+            // initial hide
+            feedbackDiv.style.display = 'none';
+        })();
+    </script>
+</body>
+
+</html>
